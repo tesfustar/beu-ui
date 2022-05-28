@@ -32,7 +32,7 @@ const About = () => {
     </div>
     {/* about app  */}
 
-    <div className='m-4 md:max-w-6xl md:mx-auto grid grid-cols-1 md:grid-cols-2 bg-orange-100 rounded-lg
+    <div className='m-4 md:max-w-6xl md:mx-auto grid grid-cols-1 md:grid-cols-2 bg-orange-100/50 rounded-lg
     items-center my-5  p-10 '>
     
     <div className='space-y-5'>
