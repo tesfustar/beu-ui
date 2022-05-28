@@ -240,7 +240,7 @@ const Special = () => {
               </div>
               <div className='flex-col flex-1 space-y-1  justify-end text-right w-full'>
                   <h4 className='text-gray-300 text-2xl font-bold line-through'>ብር{item.price +30}</h4>
-                  <h4 className='text-slate-900 text-xl sm:text-2xl font-bold '>ብር{item.price}.00</h4>
+                  <h4 className='text-slate-900 text-2xl font-bold '>ብር{item.price}.00</h4>
                   <div className='space-x-2'>
                       <button className='cursor-not-allowed rounded-md 
                       shadow-md bg-sky-100 w-7 h-7 text-orange-600 font-semibold'>-</button>
