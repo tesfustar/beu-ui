@@ -162,7 +162,7 @@ const FoodMeals = () => {
               
               </div>
               <div className='relative bottom-5'>
-              <h1 className='font-bold text-md text-gray-400 line-through'>BIRR {product.price} </h1>
+              <h1 className='font-bold text-md text-gray-400 line-through'>BIRR {product.price +30} </h1>
               <h1 className='font-bold text-lg'>BIRR <span className='text-orange-600'>{product.price}</span> </h1>
               <p className='text-slate-800 text-md font-semibold'>{product.name}</p>
               </div>
@@ -214,7 +214,7 @@ const FoodMeals = () => {
           <h1 className='hidden md:flex md:pl-3 text-slate-800 text-4xl font-bold md:pb-10'>Order summary</h1>
           <h1 className='flex md:hidden md:pl-3 text-slate-800 text-4xl font-bold md:pb-10'>Billing info</h1>
           <p className='md:pl-3 font-bold text-xl text-slate-800'>In the bag</p>
-          <div className='flex items-center justify-between p-2 bg-slate-100 m-2 py-5 rounded-lg '>
+          <div className='flex items-center justify-between p-2 bg-slate-100 m-1 sm:m-2 py-5 rounded-lg '>
               <div  className='flex flex-row items-center w-full row-span-2 space-x-1'>
                   <div className='flex items-center justify-center w-24 '>
 
@@ -230,7 +230,7 @@ const FoodMeals = () => {
                   </div>
               </div>
               <div className='flex-col flex-1 space-y-1  justify-end text-right w-full'>
-                  <h4 className='text-gray-300 text-2xl font-bold line-through'>ብር{item.price +30}</h4>
+                  <h4 className='text-gray-300 text-xl  sm:text-2xl font-bold line-through'>ብር{item.price +30}</h4>
                   <h4 className='text-slate-900 text-2xl font-bold'>ብር{item.price}.00</h4>
                   <div className='space-x-2'>
                       <button className='cursor-not-allowed rounded-md 
@@ -282,16 +282,16 @@ const FoodMeals = () => {
           <p className='  font-bold text-xl text-slate-800'>Beneficiary</p>
               <div className='grid grid-cols-2 gap-1 '>
               <input type="text" placeholder="your name" name="name" onChange={(e)=>setName(e.target.value)}
-         className="w-full p-3 rounded-md focus:outline bg-green-100 md:bg-white
+         className="w-full p-3 rounded-md focus:outline bg-green-50 md:bg-white
          border-transparent focus:border-transparent focus:ring-0 text-center font-bold" required/>
          <input type="number" placeholder="phone number" name="phone" onChange={(e)=>setPhoneNo(e.target.value)}
-         className="w-full p-3 rounded-md focus:outline bg-green-100 md:bg-white
+         className="w-full p-3 rounded-md focus:outline bg-green-50 md:bg-white
          border-transparent focus:border-transparent focus:ring-0 text-center font-bold" required/>
               </div>
               <div className='w-full'>
             <h1 className='text-slate-800 text-md md:text-xl font-bold py-2  '>Delivery address</h1>
               <textarea  id="" cols="30" rows="2" name="address" onChange={(e)=>setAddress(e.target.value)}
-               className='w-full p-5 rounded-md focus:outline bg-green-100 md:bg-white
+               className='w-full p-5 rounded-md focus:outline bg-green-50 md:bg-white
                 border-transparent focus:border-transparent focus:ring-0 text-center font-bold'
                placeholder='your address' required></textarea>
               </div>

@@ -223,7 +223,7 @@ const Special = () => {
           <h1 className='hidden md:flex md:pl-3 text-slate-800 text-4xl font-bold md:pb-10'>Order summary</h1>
           <h1 className='flex md:hidden md:pl-3 text-slate-800 text-4xl font-bold md:pb-10'>Billing info</h1>
           <p className='md:pl-3 font-bold text-xl text-slate-800'>In the bag</p>
-          <div className='flex items-center justify-between p-3 bg-slate-100 m-2 py-5 rounded-lg '>
+          <div className='flex items-center justify-between p-3 bg-slate-100 m-1 sm:m-2 py-5 rounded-lg '>
               <div  className='flex flex-row items-center w-full row-span-2 space-x-1'>
                   <div className='flex items-center justify-center w-24 '>
 
@@ -240,7 +240,7 @@ const Special = () => {
               </div>
               <div className='flex-col flex-1 space-y-1  justify-end text-right w-full'>
                   <h4 className='text-gray-300 text-2xl font-bold line-through'>ብር{item.price +30}</h4>
-                  <h4 className='text-slate-900 text-2xl font-bold '>ብር{item.price}.00</h4>
+                  <h4 className='text-slate-900 text-xl sm:text-2xl font-bold '>ብር{item.price}.00</h4>
                   <div className='space-x-2'>
                       <button className='cursor-not-allowed rounded-md 
                       shadow-md bg-sky-100 w-7 h-7 text-orange-600 font-semibold'>-</button>
@@ -291,16 +291,16 @@ const Special = () => {
           <p className='  font-bold text-xl text-slate-800'>Beneficiary</p>
               <div className='grid grid-cols-2 gap-1 '>
               <input type="text" placeholder="name" name='name'  onChange={(e)=>setName(e.target.value)}
-         className="w-full p-3 rounded-md focus:outline bg-green-100 md:bg-white
+         className="w-full p-3 rounded-md focus:outline bg-green-50 md:bg-white
         border-transparent focus:border-transparent focus:ring-0 text-center font-bold"/>
          <input type="text" placeholder="phone" name='phone'  onChange={(e)=>setPhoneNo(e.target.value)}
-         className="w-full p-3 rounded-md focus:outline bg-green-100 md:bg-white
+         className="w-full p-3 rounded-md focus:outline bg-green-50 md:bg-white
         border-transparent focus:border-transparent focus:ring-0 text-center font-bold" required/>
               </div>
               <div className='w-full'>
             <h1 className='text-slate-800 text-md md:text-xl font-bold py-2  '>Delivery address</h1>
               <textarea name="address" id="" cols="30" rows="2"  placeholder='address'  onChange={(e)=>setAddress(e.target.value)}
-               className='w-full p-5 rounded-md  bg-green-100 md:bg-white
+               className='w-full p-5 rounded-md  bg-green-50 md:bg-white
                border-transparent focus:border-transparent focus:ring-0 text-center font-bold'
                ></textarea>
               </div>

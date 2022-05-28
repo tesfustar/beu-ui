@@ -341,7 +341,7 @@ className={({ isActive }) =>
                     
                     />
                
-                    <FacebookLogin
+                    {/* <FacebookLogin
                       appId="1655010851522515"
                       autoLoad={false}
                       fields="name,email,picture"
@@ -350,7 +350,7 @@ className={({ isActive }) =>
                       render={(renderProps) => (
                         <button  onClick={renderProps.onClick}  className='bg-blue-600 cursor-pointer border-2 p-2 font-medium text-lg text-white rounded-lg'> Sign in with facebook </button>
                         )}
-                      />,
+                      />, */}
                     </div>
                       }
                   <p className='text-sm text-center font-mmedium text-gray-700

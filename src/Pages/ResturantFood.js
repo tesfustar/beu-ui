@@ -174,7 +174,9 @@ const ResturantFood = () => {
            </div>
        <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 pb-12'>
       <button onClick={()=>addToCart(item)} className='bg-black  p-2  text-white font-bold rounded-lg text-lg' >Add to Cart</button>
+      {/* <Link to='/cart'> 
       <button className='bg-gradient-to-r from-red-600 to-orange-500 p-2 text-white font-bold rounded-lg text-lg '>Buy now</button>
+      </Link> */}
             </div>
 
        </div>
