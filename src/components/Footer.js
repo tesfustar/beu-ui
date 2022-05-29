@@ -8,7 +8,7 @@ const Footer = () => {
         <div className=' flex flex-col justify-start items-start space-y-3'>
           <Link to='/'>Home</Link>
           <Link to='/resturants'>Resturants</Link>
-          <Link to='/meals'>Meals</Link>
+          <Link to='/special'>specials</Link>
             
            
             
@@ -16,7 +16,7 @@ const Footer = () => {
         <div className=' flex flex-col justify-start items-start space-y-3' >
         <Link to='/' className='hover:underline'>Terms & conditions</Link>
           <Link to='/' className='hover:underline'>Privacy</Link>
-          <Link to='/meals' className='hover:underline'>Community guidelines</Link>
+          <Link to='/' className='hover:underline'>Community guidelines</Link>
           
         </div>
         <div className='space-y-5 flex flex-col  justify-start items-start text-start'>

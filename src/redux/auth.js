@@ -66,6 +66,16 @@ const getSingleResturant=async(id)=>{
    return res.data
 }
 
- const auth={signInEmail,loginEmail,logout,orderFood,getSpecialFoods,getResturant,getSingleResturant}
+const getSearchFoods=async(query)=>{
+   const res=await API.get(`/food/search?meals=${query}`) 
+   
+   if(res.data){
+      return res.data
+   }
+   return res.data
+}
+
+ const auth={signInEmail,loginEmail,logout,orderFood,getSpecialFoods,
+   getResturant,getSingleResturant,getSearchFoods}
 
  export default auth

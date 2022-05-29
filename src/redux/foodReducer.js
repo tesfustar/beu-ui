@@ -9,15 +9,21 @@ try {
      return response
 } catch (error) {
     console.log(error)
-}
+}})
+export const getFoodsBySearch=createAsyncThunk('foods/search',async(query)=>{
+    try {
+        const response = await auth.getSearchFoods(query)
+         return response
+    } catch (error) {
+        console.log(error)
+    }})
 
 
-    
-}
-)
+
 const foodsSlice=createSlice({
     name:'food',
     initialState:{
+        searchFoods:[],
         foods:[],
         isLoading:false,
         isError:false
@@ -35,6 +41,13 @@ const foodsSlice=createSlice({
          .addCase(getSpecials.rejected, (state, action) => {
           state.isError=true
           })
+          .addCase(getFoodsBySearch.pending, (state, action) => {
+            state.isLoading=true
+           })
+          .addCase(getFoodsBySearch.fulfilled, (state, action) => {
+            state.searchFoods=action.payload
+            state.isLoading=false
+             })
     }
 })
 

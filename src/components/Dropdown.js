@@ -34,7 +34,7 @@ const dispach =useDispatch()
           isActive ? " text-red-600   font-bold     text-lg " : null,
         ]
          
-        }>Spacial</NavLink>
+        }>special</NavLink>
         <NavLink to='/resturants' className={({ isActive }) => 
         [
           "group flex items-center  text-base font-medium rounded-md",

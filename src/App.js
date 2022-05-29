@@ -11,6 +11,7 @@ import Resturants from './Pages/Resturants';
 import Special from './Pages/Special';
 import ResturantFood from './Pages/ResturantFood';
 import Cart from './Pages/Cart';
+import Search from './Pages/Search';
 import { FaAngleUp } from "react-icons/fa";
 import Success from './Pages/Success'
 
@@ -64,6 +65,7 @@ window.scrollTo({
        <Route path='/cart' element={<Cart />} />
        <Route path='/resturants/:id' element={<ResturantFood />} />
        <Route path='/success' element={<Success />} />
+       <Route path='/search' element={<Search />} />
       </Routes>
     
      <Footer />

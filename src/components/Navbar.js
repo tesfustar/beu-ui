@@ -10,18 +10,22 @@ import GoogleLogin from 'react-google-login';
 import './style.css'
 import {reset} from '../redux/userReducer'
 import { gapi } from 'gapi-script'
+import {getFoodsBySearch} from '../redux/foodReducer'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import decode from 'jwt-decode'
+import axios from 'axios'
 
 const Navbar = ({onToggle}) => {
   const[isSearching,setIsSearching]=useState(false);
   const [isOpen, setIsOpen] = useState(false)
   const [isSignUp,setIsSignUp] = useState(false)
+  const [query,setQuery]=useState("")
   const user =JSON.parse((localStorage.getItem('profile')))
   const location=useLocation()
   const navigate =useNavigate()
   const {isSuccess,isError,isLoading,message} = useSelector((state)=>state.user)
- 
+    const {searchFoods} = useSelector((state)=>state.food)
+    console.log(searchFoods)
  const [formData,setFormData]=useState({
      name:'',
      email:'',
@@ -107,6 +111,11 @@ const responseFacebook = (response) => {
   dispach(signGoogle({response,token}))
 }
 
+const handleSearch=(e)=>{
+  navigate('/search')
+  dispach(getFoodsBySearch(query))
+}
+
 
   const SearchContainer=()=>{
     return(
@@ -114,10 +123,10 @@ const responseFacebook = (response) => {
       <div  
       className={isSearching ? 
         'm-5 md:max-w-xl flex flex-grow px-5 items-center rounded-md space-x-2 md:mx-auto bg-sky-50 p-3  border-y-2 border-orange-400  ' :"hidden"}>
-        <FaSearch size={15} className='text-gray-500  cursor-pointer '/>
-          <input type="text" name="" id="" 
+          <input type="search" name="" id=""   value={query} onChange={(e)=>setQuery(e.target.value)}
           className='flex-grow  border-transparent focus:border-transparent focus:ring-0  bg-transparent font-medium text-gray-600 '
-          placeholder='search a resturant or a meal' />
+          placeholder='search a resturant or a meal'/>
+        <FaSearch size={22} className='text-red-500  cursor-pointer ' onClick={handleSearch}/>
         </div>
       
        </>
