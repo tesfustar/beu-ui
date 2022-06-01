@@ -161,7 +161,7 @@ const Cart = () => {
             className='rounded-xl w-20 h-20 md:w-24   md:h-24 object-cover'/>
           <div className="pl-2">
           <h2 className="text-gray-700 text-xs sm:text-lg font-bold">{cartItem.name}</h2>
-          <p className="line-clamp-2 text-xs md:text-md ">this is discription</p>
+          <p className="line-clamp-2 text-xs md:text-md ">{cartItem.description}</p>
           <h2 className="text-gray-700  text-sm font-bold">{cartItem.price}</h2>
           <MdDelete onClick={()=>removerItem(cartItem)}
           size={20} className='text-red-500  cursor-pointer  '/>

@@ -138,7 +138,7 @@ const Search = () => {
         
         {isLoading ?  (<Skeleton />) :(
             <>
-         {searchFoods?.length ===0 ?  <h1 className='font-bold p-4 font-md text-center text-gray-800'>no foods found</h1> :<div className='grid grid-flow-row-dense grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
+         {searchFoods?.length ===0 ?  <h1 className='font-bold p-4 font-md  text-center text-gray-800'>no foods found</h1> :<div className='grid grid-flow-row-dense grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
             {searchFoods?.map((product)=>(
                 <div className='relative flex flex-col m-1  cursor-pointer ' key={product.id}>
                   <div onClick={()=>openModal(product)}

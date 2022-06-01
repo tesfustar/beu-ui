@@ -13,7 +13,7 @@ import { gapi } from 'gapi-script'
 import {getFoodsBySearch} from '../redux/foodReducer'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import decode from 'jwt-decode'
-import axios from 'axios'
+
 
 const Navbar = ({onToggle}) => {
   const[isSearching,setIsSearching]=useState(false);
@@ -47,16 +47,20 @@ const Navbar = ({onToggle}) => {
 
     const toggle=()=>{
       setIsSignUp(!isSignUp)
+      
     }
-    function closeIsLoading() {
-      isLoading=false
-    }
-
+ 
   
   const search=()=>{
-    return(
-      setIsSearching(!isSearching)   
-   )
+     setIsSearching(!isSearching)   
+     
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+  
+     
+ 
   }
 
   
@@ -71,7 +75,7 @@ const handleSubmit=(e)=>{
 }
 useEffect(()=>{
   dispach(reset())
-},[isOpen])
+},[isOpen,isSuccess,isError])
 
 
 
@@ -112,10 +116,13 @@ const responseFacebook = (response) => {
 }
 
 const handleSearch=(e)=>{
-  navigate('/search')
+  navigate(`/search`)
   dispach(getFoodsBySearch(query))
 }
 
+const handleClose=()=>{
+  setIsSearching(false)   
+}
 
   const SearchContainer=()=>{
     return(
@@ -125,10 +132,12 @@ const handleSearch=(e)=>{
         'm-5 md:max-w-xl flex flex-grow px-5 items-center rounded-md space-x-2 md:mx-auto bg-sky-50 p-3  border-y-2 border-orange-400  ' :"hidden"}>
           <input type="search" name="" id=""   value={query} onChange={(e)=>setQuery(e.target.value)}
           className='flex-grow  border-transparent focus:border-transparent focus:ring-0  bg-transparent font-medium text-gray-600 '
-          placeholder='search a resturant or a meal'/>
+          placeholder='search a meal'/>
         <FaSearch size={22} className='text-red-500  cursor-pointer ' onClick={handleSearch}/>
+        
         </div>
-      
+
+     
        </>
    
     )
@@ -224,7 +233,7 @@ className={({ isActive }) =>
  
 }
    > Home </NavLink>
-         <NavLink to='/special'  
+         <NavLink to='/special'  onClick={handleClose}
         className={({ isActive }) => 
         [
           "group flex items-center  text-base font-medium rounded-md",
@@ -234,7 +243,7 @@ className={({ isActive }) =>
         }>
          Special  
          </NavLink> 
-         <NavLink to='/resturants'  
+         <NavLink to='/resturants'  onClick={handleClose}
         className={({ isActive }) => 
         [
           "group flex items-center  text-base font-medium rounded-md",
@@ -261,7 +270,7 @@ className={({ isActive }) =>
           ]
            
           }>
-          <div >
+          <div onClick={handleClose}>
              <BiShoppingBag size={25} className='text-white md:text-gray-600  cursor-pointer '/>
              {/* <span className='absolute right-[-30px]   items-center rounded-full
              text-center font-bold text-sm  animate-bounce'>(cart)</span> */}
@@ -275,7 +284,7 @@ className={({ isActive }) =>
          
           </div>
           <div onClick={onToggle} >
-          <FaBars size={18} className='flex md:hidden cursor-pointer text-white'/>
+          <FaBars size={18} className='flex md:hidden cursor-pointer text-white'onClick={handleClose} />
           </div>
         </div>
     </header>

@@ -11,34 +11,29 @@ const cartSlice = createSlice({
     },
     reducers: {
      addProduct:(state,action)=>{
-    const itemIndex= state.cartItems.findIndex((item)=>item.id === action.payload.id)
-      
-       if(itemIndex >=0){
-         state.cartItems[itemIndex].cartQuantity +=1;
-      
-        }
-     else{
-       const tempProduct ={...action.payload,cartQuantity :1}
-       state.cartItems.push(tempProduct)
-       
-     }
-    
-
+      const itemIndex= state.cartItems.findIndex((item)=>item._id === action.payload._id)
+      if(itemIndex >=0){
+        state.cartItems[itemIndex].cartQuantity +=1;
+       }
+    else{
+      const tempProduct ={...action.payload,cartQuantity :1}
+      state.cartItems.push(tempProduct)
+    }
      },
      removeProduct:(state,action)=>{
-       const removedItem = state.cartItems.filter((cartItem)=>cartItem.id !== action.payload.id);
+       const removedItem = state.cartItems.filter((cartItem)=>cartItem._id !== action.payload._id);
        state.cartItems = removedItem
      
       },
       //decrease cart
       decreaseCart:(state,action)=>{
-        const itemIndex = state.cartItems.findIndex((cartItem)=>cartItem.id === action.payload.id);
+        const itemIndex = state.cartItems.findIndex((cartItem)=>cartItem._id === action.payload._id);
         if(state.cartItems[itemIndex].cartQuantity > 1){
           state.cartItems[itemIndex].cartQuantity -= 1
          
         }
         else if(state.cartItems[itemIndex].cartQuantity === 1){
-          const removedItem = state.cartItems.filter((cartItem)=>cartItem.id !== action.payload.id);
+          const removedItem = state.cartItems.filter((cartItem)=>cartItem._id !== action.payload._id);
           state.cartItems = removedItem
           
         }
@@ -46,7 +41,7 @@ const cartSlice = createSlice({
       },
       //increase cart
       increaseCart:(state,action)=>{
-       const itemIndex = state.cartItems.findIndex((cartItem)=>cartItem.id === action.payload.id)
+       const itemIndex = state.cartItems.findIndex((cartItem)=>cartItem._id === action.payload._id)
        state.cartItems[itemIndex].cartQuantity +=1
        
      

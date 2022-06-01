@@ -210,7 +210,7 @@ const FoodMeals = () => {
             active:border-red-400 focus:outline-none focus:ring focus:ring-red-400'>
            <FaTimes size={25} className='text-black  '/>
            </div>
-        <div className=' m-2 p-2 md:m-4'>
+        <div className=' p-2 md:m-4'>
           <h1 className='hidden md:flex md:pl-3 text-slate-800 text-4xl font-bold md:pb-10'>Order summary</h1>
           <h1 className='flex md:hidden md:pl-3 text-slate-800 text-4xl font-bold md:pb-10'>Billing info</h1>
           <p className='md:pl-3 font-bold text-xl text-slate-800'>In the bag</p>
@@ -225,8 +225,7 @@ const FoodMeals = () => {
 
                   <h3 className=' text-black text-md md:text-xl font-bold'>{item.name}</h3>
                   <p  className='hidden sm:flex md:w-32 lg:w-60 text-sm 
-                   font-semibold text-gray-500 md:text-md'>Firfir Gomen Banatu | fasting Enjera firfir,
-                       Gomen Kitfo,</p>
+                   font-semibold text-gray-500 md:text-md'>{item.description}</p>
                   </div>
               </div>
               <div className='flex-col flex-1 space-y-1  justify-end text-right w-full'>
