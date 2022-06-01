@@ -25,13 +25,13 @@ const Navbar = ({onToggle}) => {
   const navigate =useNavigate()
   const {isSuccess,isError,isLoading,message} = useSelector((state)=>state.user)
     const {searchFoods} = useSelector((state)=>state.food)
-    console.log(searchFoods)
+   
  const [formData,setFormData]=useState({
      name:'',
      email:'',
      password:''
  })
-
+console.log(message)
 
  const handleChange=(e)=>{
   setFormData({...formData,[e.target.name]:e.target.value})
@@ -75,7 +75,7 @@ const handleSubmit=(e)=>{
 }
 useEffect(()=>{
   dispach(reset())
-},[isOpen,isSuccess,isError])
+},[isOpen,user])
 
 
 
