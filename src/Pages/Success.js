@@ -12,7 +12,7 @@ const Success = () => {
        justify-center items-center bg-gradient-to-r from-red-600 to-orange-500 py-4'>
       <BsBagCheckFill color='#fff' size={25}/>
       <div className='flex flex-col items-center justify-center'>
-      <h2 className='font-medium text-white'>Thank you.your order is successfully submitted.</h2>
+      <h2 className='font-medium text-white text-sm'>Thank you.your order is successfully submitted.</h2>
       <h2 className='font-medium text-white'>please check your phone for delivery.</h2>
       </div>
       <Link to='/'>
