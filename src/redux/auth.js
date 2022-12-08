@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const API=axios.create({baseURL:'https://beu-clone.herokuapp.com/api'})
+const API=axios.create({baseURL:'https://web-production-c492.up.railway.app/api'})
 
 API.interceptors.request.use((req)=>{
    if(localStorage.getItem('profile')){
