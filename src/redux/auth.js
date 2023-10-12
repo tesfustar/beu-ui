@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const API=axios.create({baseURL:'https://beu.up.railway.app/api'})
+const API=axios.create({baseURL:'https://beu.onrender.com/api'})
 
 API.interceptors.request.use((req)=>{
    if(localStorage.getItem('profile')){
